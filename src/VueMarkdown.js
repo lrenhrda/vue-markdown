@@ -10,6 +10,7 @@ import mark from 'markdown-it-mark'
 import toc from 'markdown-it-toc-and-anchor'
 import katex from 'markdown-it-katex'
 import tasklists from 'markdown-it-task-lists'
+import twemoji from 'twemoji'
 
 export default {
   md: new markdownIt(),
@@ -58,6 +59,10 @@ export default {
     emoji: {
       type: Boolean,
       default: true,
+    },
+    twemoji: {
+      type: Boolean,
+      default: false,
     },
     typographer: {
       type: Boolean,
@@ -151,6 +156,13 @@ export default {
 
     if (this.emoji) {
       this.md.use(emoji)
+    }
+
+    if (this.twemoji) {
+      this.md.use(emoji)
+      this.md.renderer.rules.emoji = function (token, idx) {
+        return twemoji.parse(token[idx].content)
+      }
     }
 
     this.md.set({

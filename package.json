@@ -2,10 +2,9 @@
   "name": "vue-markdown",
   "version": "2.2.4",
   "description": "A Powerful and Highspeed Markdown Parser for Vue",
-  "main": "dist/vue-markdown.common.js",
+  "main": "dist/vue-markdown.js",
   "files": [
     "dist/vue-markdown.js",
-    "dist/vue-markdown.common.js",
     "src"
   ],
   "scripts": {
@@ -53,6 +52,7 @@
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "markdown-it-task-lists": "^2.0.1",
-    "markdown-it-toc-and-anchor": "^4.1.2"
+    "markdown-it-toc-and-anchor": "^4.1.2",
+    "twemoji": "^2.5.0"
   }
 }
